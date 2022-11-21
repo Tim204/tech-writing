@@ -79,12 +79,6 @@ Resources are available on the web and client applications can access them using
 *Resource Representation* has to do with the way the server returns the requested resource. In this particular example
 the resource was returned in JSON format but the same data could also be returned as HTML or XML.
 
-*[JSON]: JavaScript Object Notation
-
-*[HTML]: HyperText Markup Language
-
-*[XML]: eXtensile Markup Language
-
 *HTTP Methods* are related to the operations supported by the API endpoints. Some endpoints may allow to modify data while
 others may only allow you to read. HTTP defines methods such as:
 + GET -for getting a Resource
@@ -94,7 +88,8 @@ others may only allow you to read. HTTP defines methods such as:
 + DELETE -for deleting a resource
 
 Now that it is confirmed that we can get resources from the API endpoint, all left to be done is pass a URL endpoint to 
-the script and download an image:
+the script and download an image. Replace `"some url"` with `"http://127.0.0.1:8000/media/static_media/images/Lovebird.jpg"` 
+and run the script.
 
 ```angular2html
 import requests
@@ -113,9 +108,11 @@ with open(datasheet_name, 'wb') as file:
 
 ```
 
-And that's it. The image file gets directly downloaded into a folder in your computer. In my case the image is downloaded
-to the folder where the python script is running.
+And that's it. The image file gets directly downloaded into a folder in your computer. In my case, the image is downloaded
+to the directory where the python script is running. The script can be altered to dynamically loop over multiple endpoints and download 
+multiple images at once, but I would rather keep the example simple.
 
+Image downloaded:
 <img src="images/LoveBird.png" alt="Markdown Monster icon" style="float: left; margin-right: 10px;"/>
 
 
